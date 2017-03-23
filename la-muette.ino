@@ -45,6 +45,7 @@ void setup()
     debug_port.println("Failed to initialize SD Card");
     return;
   }
+  digitalWrite(7, HIGH);
   // Init log file
   log_file = "data.log";
   File LOG = SD.open(log_file, FILE_WRITE);
@@ -56,6 +57,7 @@ void setup()
   NMEA2000.Open();
   debug_port.println("CAN Bus initialized");
   debug_port.println("Initialization done.");
+  digitalWrite(8, HIGH);
 }
 
 /**

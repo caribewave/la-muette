@@ -11,6 +11,12 @@ void log_data(Stream &serial, gps_fix &fix, const tN2kMsg &N2kMsg)
   serial.print(',');
   serial.print(fix.longitude(), 8);
   serial.print(',');
+  serial.print(fix.lat_err(), 8);
+  serial.print(',');
+  serial.print(fix.lon_err(), 8);
+  serial.print(',');
+  serial.print(fix.satellites);
+  serial.print(',');
   serial.print(N2kMsg.PGN);
   serial.print(',');
   switch (N2kMsg.PGN) {
